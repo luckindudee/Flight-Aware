@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Marulhos Suítes Resort</title>
+  <link rel="stylesheet" type="text/css" href="Holiday Resort.css">
+</head>
+<body>
+<div class="navbar">
+  <a href="contactUs.html">Contact Us</a>
+  <a href="About.html">About Us</a>
+  <a href="index.html">Where To?</a>
+  <a href="Search.html" class="left">Flight Aware</a>
+</div>
+<hr>
+<section style="background-color: #2C7D7A">
+<div class="resortName">
+  <h1 align="center">Marulhos Suítes Resort</h1>
+  <img src="pictures/southamericaresort.jpg" class="center">
+  <p>With a pool overlooking Muro Alto Beach, this resort offers a water park, tennis and soccer courts.Marulhos Suites e Resort is just a 10-minute walk from Cupe Beach, and 6 km from Porto de Galinhas City. Recife Airport is 60 km away.The Marulhos resort serves a daily buffet breakfast at the restaurant, which features a selection of fruits, breads and cold meats. Guests can have refreshing drinks at the luxurious bar.Boasting a balcony, the air-conditioned accommodations offer an LCD cable TV and minibar.While guests enjoy the facilities of this resort, children can have fun with the entertainment staff at the playground. A TV room and sauna are also available.</p>
+</div>
+</section>
+<hr>
+<section style="background-color: #A7E7DD">
+  <h1>Information</h1>
+  <table style="width:100%">
+  <tr>
+    <th>Comfort Level<br>4 Stars</th>
+    <th>Available From<br>2015/01/01 to 2023/12/31</th>
+    <th>Activities<br>Kids Club, Golf, Scuba Diving, Tennis, Sailing, Spa</th>
+    <th>Price<br>$ 2062</th>
+  </tr>
+</table>
+</section>
+<hr>
+<section style="background-color: #A7E7DD">
+  <h1>Features</h1>
+  <table style="width:100%">
+  <tr>
+    <th>Internet<br><br>WiFi is available in all areas.<br>FREE</th>
+    <th>Cleaning services<br><br>Daily housekeeping.<br>FREE</th>
+    <th>Business facilities<br><br>Fax/photocopying.<br>CHARGES MAY APPLY</th>
+  </tr>
+  <tr>
+    <th>Reception services<br><br>ATM/cash machine on site.<br>FREE</th>
+    <th>Transportation<br><br>Airport shuttle services.<br>FREE</th>
+    <th>Pets<br><br>Pets are allowed..</th>
+</table>
+</section>
+<hr>
+<section style="background-color: #A7E7DD">
+  <h1>Gallery</h1>
+  <!-- Container for the image gallery -->
+<div class="container">
+
+  <!-- Full-width images with number text -->
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+      <img src="pictures/south america1.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+      <img src="pictures/south america2.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+      <img src="pictures/south america3.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+      <img src="pictures/south america4.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+      <img src="pictures/south america5.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+      <img src="pictures/south america6.jpg" style="width:100%">
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <!-- Image text -->
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <!-- Thumbnail images -->
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="pictures/south america1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Marulhos Suítes Resort">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="pictures/south america2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Marulhos Suítes Resort
+">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="pictures/south america3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Marulhos Suítes Resort
+">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="pictures/south america4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Marulhos Suítes Resort
+">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="pictures/south america5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Marulhos Suítes Resort
+">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="pictures/south america6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Marulhos Suítes Resort
+">
+    </div>
+  </div>
+</div>
+<script>
+  var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+</section>
+<hr>
+<section style="background-color: #A7E7DD">
+  <h1>Location</h1>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.6451361912164!2d-34.985035585323956!3d-8.436464993933228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aa9332b43cd9bf%3A0x2a26e2a4629780ee!2sMarulhos%20Su%C3%ADtes%20Resort!5e0!3m2!1sen!2slk!4v1578467188770!5m2!1sen!2slk" width="1420" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+</section>
+<hr>
+<div class="footer">
+  <h2>Flight Aware</h2>
+  <a href="contactUs.html">Contact Us</a>
+  <a href="About.html">About Us</a>
+  <a href="index.html">Where To?</a>
+  <a href="Search.html" class="left">Flight Aware</a>
+</div>
+</body>
+</html>

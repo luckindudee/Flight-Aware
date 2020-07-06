@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shangri-La's Le Touessrok Resort & Spa</title>
+  <link rel="stylesheet" type="text/css" href="Holiday Resort.css">
+</head>
+<body>
+<div class="navbar">
+  <a href="contactUs.html">Contact Us</a>
+  <a href="About.html">About Us</a>
+  <a href="index.html">Where To?</a>
+  <a href="index.html">Flight Aware</a>
+</div>
+<hr>
+<section style="background-color: #2C7D7A">
+<div class="resortName">
+  <h1 align="center">Shangri-La's Le Touessrok Resort & Spa</h1>
+  <img src="pictures/africaresort.jpg" class="center">
+  <p>Chic rooms and suites have balconies or terraces offering ocean views. All include minibars, flat-screen TVs, Nespresso machines and complimentary Wi-Fi. Upgraded suites provide private pools, and freebies such as breakfast and cocktails. Beach villas add infinity pools and butler service. Room service is available 24/7.
+  Located along the white sand, palm-fringed beach of Trou d’Eau Douce Bay, Shangri-La's Le Touessrok Resort & Spa is set in a tropical garden and offers a spa and wellness centre, 18-hole golf course and outdoor pools.The sophisticated rooms and suites offer breathtaking views of the Indian Ocean. They are each equipped with a flat-screen satellite TV, sofa and tea-and-coffee-making facilities.Shangri-La's Le Touessrok Resort & Spa resort features an extensive range of culinary options. Five restaurants and three bars provide a lively yet sophisticated offering, including Le Bazar restaurant, a dynamic food theatre featuring dishes from around the world, Safran, the internationally acclaimed Indian restaurant, Kushi a Japanese restaurant with sensational sea views and Yakiniku grills, and Republik Beach Club & Grill, a trendy beach club serving Mediterranean cuisine and barbecue grills.</p>
+</div>
+</section>
+<hr>
+<section style="background-color: #A7E7DD">
+  <h1>Information</h1>
+  <table style="width:100%">
+  <tr>
+   <th>Comfort Level<br>4 Stars</th>
+    <th>Available From<br>2015/01/01 to 2023/12/31</th>
+    <th>Activities<br>Kids Club, Golf, Scuba Diving, Tennis, Sailing, Spa</th>
+    <th>Price<br>$ 2062</th>
+  </tr>
+</table>
+</section>
+<hr>
+<section style="background-color: #A7E7DD">
+  <h1>Features</h1>
+  <table style="width:100%">
+  <tr>
+    <th>Internet<br><br>WiFi is available in all areas.<br>FREE</th>
+    <th>Cleaning services<br><br>Daily housekeeping.<br>FREE</th>
+    <th>Business facilities<br><br>Fax/photocopying.<br>CHARGES MAY APPLY</th>
+  </tr>
+  <tr>
+    <th>Reception services<br><br>ATM/cash machine on site.<br>FREE</th>
+    <th>Transportation<br><br>Airport shuttle services.<br>FREE</th>
+    <th>Pets<br><br>Pets are allowed..</th>
+</table>
+</section>
+<hr>
+<section style="background-color: #A7E7DD">
+  <h1>Gallery</h1>
+  <!-- Container for the image gallery -->
+<div class="container">
+
+  <!-- Full-width images with number text -->
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+      <img src="pictures/africa1.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+      <img src="pictures/africa2.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+      <img src="pictures/africa3.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+      <img src="pictures/africa4.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+      <img src="pictures/africa5.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+      <img src="pictures/africa6.jpg" style="width:100%">
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <!-- Image text -->
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <!-- Thumbnail images -->
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="pictures/africa1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Shangri-La's Le Touessrok Resort & Spa<">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="pictures/africa2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Shangri-La's Le Touessrok Resort & Spa<
+">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="pictures/africa3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Shangri-La's Le Touessrok Resort & Spa<
+">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="pictures/africa4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Shangri-La's Le Touessrok Resort & Spa<
+">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="pictures/africa5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Shangri-La's Le Touessrok Resort & Spa<
+">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="pictures/africa6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Shangri-La's Le Touessrok Resort & Spa<
+">
+    </div>
+  </div>
+</div>
+<script>
+  var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+</section>
+<hr>
+<section style="background-color: #A7E7DD">
+  <h1>Location</h1>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3743.1837028098307!2d57.79463681481877!3d-20.2512146864247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x217cfa90d4780cd9%3A0x8679e902dd9386a1!2sShangri-La&#39;s%20Le%20Touessrok%20Resort%20%26%20Spa!5e0!3m2!1sen!2slk!4v1578468547292!5m2!1sen!2slk" width="1420" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+</section>
+<hr>
+<div class="footer">
+  <h2>Flight Aware</h2>
+  <a href="contactUs.html">Contact Us</a>
+  <a href="About.html">About Us</a>
+  <a href="index.html">Where To?</a>
+  <a href="Search.html" class="left">Flight Aware</a>
+</div>
+</body>
+</html>

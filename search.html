@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Green Inn</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="jQuery.js"></script>
+<script src="jquery-ui.js"></script>
+<link href="jquery-ui.css" rel="stylesheet">
+<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+
+<body>
+
+<div class="navbar">
+  <a href="contactUs.html">Contact Us</a>
+  <a href="About.html">About Us</a>
+  <a href="index.html">Where To?</a>
+  <a href="index.html">Flight Aware</a>
+</div>
+
+<h1 align="center">Search your Resort</h1>
+<section style="background-color: #2C7D7A">
+ <h3>Destination:</h3>
+   <select name="destination" id="destination">
+     <option value="The Alps">The Alps</option>
+     <option value="Europe">Europe</option>
+     <option value="Africa" selected>Africa</option>
+     <option value="Caribbean">Caribbean</option>
+     <option value="Indian Ocean">Indian Ocean</option>
+     <option value="N/C America">N/C America</option>
+     <option value="South America">South America</option>
+     <option value="Asia">Asia</option>
+   </select>
+   
+   
+  <div class="Time">
+    <h3>Available Date:</h3>
+    <select name="time" id="time">
+     <option value="January", "Feburary", "March", "April"> January - April (2020)</option>
+     <option value="May", "June", "July", "August">May - August (2020)</option>
+     <option value="September", "October", "November", "December">September - December (2020)</option>
+     <option value="Anytime" selected>Anytime</option>
+    </select>
+   </div> 
+   
+ <h3>Activities:</h3>
+   <select name="activities" id="activities">
+     <option value="Spa">Spa</option>
+     <option value="Horse riding">Horse riding</option>
+     <option value="Hiking" selected>Hiking</option>
+   <option value="Golf">Golf</option>
+     <option value="Scuba Diving">Scuba Diving</option>
+     <option value="Tennis"> Tennis</option>
+     <option value="Sailing">Sailing</option>
+     <option value="Water skiing">Water skiing</option>
+   </select>
+   
+   
+ <p class="box">  
+   <h3>Price Range:</h3>
+   <input type="text" id="amount" readonly class="goldSliderText">
+   </p>
+   <div id="slider-range"></div>
+     
+   <br><br>
+   
+  <button id="Search">Search</button> 
+
+ <div id="Placeholder"></div>
+
+
+<script>
+
+var data = { 
+
+  "properties": [
+        {
+            "id":"001",
+            "name":"Les Boucaniers",
+            "destination":"Caribbean",
+            "activities":"Spa",
+            "price":650000,
+           "lev":"Premium 5 stars",
+           "tenure":"Freehold",
+           "description":"In a remote beauty spot, savour the luxury of Mauritian lifestyle. The idyllic natural setting is enhanced by the sublime decor designed by Marc Hertrich and Nicolas Adnet, and the Resort's top-end comfort is perfectly reflected in its beautifully spacious rooms. The exceptional CINQ MONDES Spa* and luxurious overflow pool add an ideally Zen touch. The Resort is entirely devoted to fulfilling its guests' desires and offers discreet, personal service in its swimming areas, bars and 'Table Gourmet' restaurants.",
+           "location":"Martinique",
+           "picture":"pictures/caribbianreort.jpg",
+           "url":"The Caribbean.html",
+             "added": {
+                "month":"January",
+                "day":12,
+                "year":2020
+              }
+        },
+        {
+          "id":"002",
+            "name":"La Plantation d'Albion",
+            "destination":"Indian Ocean",
+            "activities":"Tennis",
+            "price":299995,
+           "lev":"Premium 4 stars",
+           "tenure":"Freehold",
+           "description":"A divers' paradise in the Baie du Marin, a legendary spot.Its bungalows are discreetly lodged in a tropical garden beside the white sand beach in superb Marin Bay. A magical site where you can enjoy a taste of everything, alone or with family or friends. Try water sports and the magnificent Club Med Spa*. You'll be enchanted by the exotic flavours of the local cuisine and the joyful spirit of the Caribbean.",
+           "location":"Mauritius",
+           "picture":"pictures/indianocianresort.jpg",
+           "url":"Indianocean.html",
+             "added": {
+                "month":"January",
+                "day":12,
+                "year":2020
+              }
+        },
+        {
+          "id":"003",
+            "name":"Peppermill Resort, Inc",
+            "destination":"N/C America",
+            "activities":"Scuba Diving",
+            "price":299995,
+           "lev":"Premium 4 stars",
+           "tenure":"Freehold",
+           "description":"A 2-minute walk from Virginia Lake, this sprawling, Tuscan-themed casino hotel is also 2 miles from Reno Airport.Sophisticated rooms feature custom mahogany furnishings and marble bathrooms, plus flat-screen TVs and Wi-Fi. Suites add living areas, and some include 4-poster beds, whirlpool tubs and/or hand-painted artwork. Room service is available.",
+           "location":"Mauritius",
+           "picture":"pictures/northamericaresort.jpeg",
+           "url":"Northandcentralamericaresort.html",
+             "added": {
+                "month":"May",
+                "day":12,
+                "year":2020
+              }
+        },
+        {
+          "id":"004",
+            "name":"Shangri-La's Le Touessrok Resort & Spa",
+            "destination":"Africa",
+            "activities":"Spa",
+            "price":599995,
+           "lev":"Premium 4 stars",
+           "tenure":"Freehold",
+           "description":"A divers' paradise in the Baie du Marin, a legendary spot.Its bungalows are discreetly lodged in a tropical garden beside the white sand beach in superb Marin Bay. A magical site where you can enjoy a taste of everything, alone or with family or friends. Try water sports and the magnificent Club Med Spa*. You'll be enchanted by the exotic flavours of the local cuisine and the joyful spirit of the Caribbean.",
+           "location":"Mauritius",
+           "picture":"pictures/africa.jpg",
+           "url":"Africaresort.html",
+             "added": {
+                "month":"September",
+                "day":12,
+                "year":2020
+              }
+        },
+        {
+          "id":"005",
+            "name":"Bürgenstock Resort",
+            "destination":"The Alps",
+            "activities":"Tennis",
+            "price":499995,
+           "lev":"Premium 4 stars",
+           "tenure":"Freehold",
+           "description":"A divers' paradise in the Baie du Marin, a legendary spot.Its bungalows are discreetly lodged in a tropical garden beside the white sand beach in superb Marin Bay. A magical site where you can enjoy a taste of everything, alone or with family or friends. Try water sports and the magnificent Club Med Spa*. You'll be enchanted by the exotic flavours of the local cuisine and the joyful spirit of the Caribbean.",
+           "location":"Mauritius",
+           "picture":"pictures/alpsresort.jpg",
+           "url":"Alpsresort.html",
+             "added": {
+                "month":"September",
+                "day":12,
+                "year":2020
+              }
+        },
+        {
+          "id":"006",
+            "name":"Grand View Resort Beitou Hotel",
+            "destination":"Asia",
+            "activities":"Spa",
+            "price":699995,
+           "lev":"Premium 4 stars",
+           "tenure":"Freehold",
+           "description":"A divers' paradise in the Baie du Marin, a legendary spot.Its bungalows are discreetly lodged in a tropical garden beside the white sand beach in superb Marin Bay. A magical site where you can enjoy a taste of everything, alone or with family or friends. Try water sports and the magnificent Club Med Spa*. You'll be enchanted by the exotic flavours of the local cuisine and the joyful spirit of the Caribbean.",
+           "location":"Mauritius",
+           "picture":"pictures/asiaresort.jpg",
+           "url":"Asiaresort.html",
+             "added": {
+                "month":"January",
+                "day":12,
+                "year":2020
+              }
+        },
+        {
+          "id":"007",
+            "name":"Marjal Costa Blanca Camping & Resort",
+            "destination":"Europe",
+            "activities":"Tennis",
+            "price":299995,
+           "lev":"Premium 4 stars",
+           "tenure":"Freehold",
+           "description":"A divers' paradise in the Baie du Marin, a legendary spot.Its bungalows are discreetly lodged in a tropical garden beside the white sand beach in superb Marin Bay. A magical site where you can enjoy a taste of everything, alone or with family or friends. Try water sports and the magnificent Club Med Spa*. You'll be enchanted by the exotic flavours of the local cuisine and the joyful spirit of the Caribbean.",
+           "location":"Mauritius",
+           "picture":"pictures/europeresort.jpg",
+           "url":"Europeresort.html",
+             "added": {
+                "month":"January",
+                "day":12,
+                "year":2020
+              }
+        },
+        {
+          "id":"008",
+            "name":"Marulhos Suítes Resort",
+            "destination":"South America",
+            "activities":"Golf",
+            "price":399995,
+           "lev":"Premium 4 stars",
+           "tenure":"Freehold",
+           "description":"A divers' paradise in the Baie du Marin, a legendary spot.Its bungalows are discreetly lodged in a tropical garden beside the white sand beach in superb Marin Bay. A magical site where you can enjoy a taste of everything, alone or with family or friends. Try water sports and the magnificent Club Med Spa*. You'll be enchanted by the exotic flavours of the local cuisine and the joyful spirit of the Caribbean.",
+           "location":"Mauritius",
+           "picture":"pictures/southamericaresort.jpg",
+           "url":"Southamericaresort.html",
+             "added": {
+                "month":"May",
+                "day":12,
+                "year":2020
+              }
+        },
+    
+        
+]}
+
+</script>
+
+</section>
+</body>
+</html>

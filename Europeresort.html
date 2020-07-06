@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Marjal Costa Blanca Camping & Resort</title>
+	<link rel="stylesheet" type="text/css" href="Holiday Resort.css">
+</head>
+<body>
+<div class="navbar">
+  <a href="contactUs.html">Contact Us</a>
+  <a href="About.html">About Us</a>
+  <a href="index.html">Where To?</a>
+  <a href="Search.html">Flight Aware</a>
+</div>
+<hr>
+<section style="background-color: #2C7D7A">
+<div class="resortName">
+	<h1 align="center">Marjal Costa Blanca Camping & Resort</h1>
+	<img src="pictures/europeresort.jpg" class="center">
+	<p>The nearby town of Guardamar is just 15km away from the resort. It has 12 kms  of breath taking wide, white sand beaches that are never overcrowded even during the busiest summer months. Guardamar has a great choice of watersports including sailing, windsurfing, water-skiing, scuba diving, canoeing and jet skiing.Take a day trip to Torrevieja, visit the amazing shopping centre (Habaneras) and water park (Aquapolis). Alicante also has great choice of shopping centres  and Alicante offers numerous attractions including traditional festivals such as St John’s Bonfires in June culminating in a huge fireworks display. Experience Benidorm with its palms lined promenade, sandy beaches, numerous bars/restaurants and its legendary nightlife.</p>
+</div>
+</section>
+<hr>
+<section style="background-color: #A7E7DD">
+  <h1>Information</h1>
+  <table style="width:100%">
+  <tr>
+    <th>Comfort Level<br>5 Star</th>
+    <th>Available From<br>2015/05/05 to 2023/12/31</th>
+    <th>Activities<br>Water Skiing, Tennis, Scuba Diving, Spa</th>
+    <th>Price<br>$ 1254</th>
+  </tr>
+</table>
+</section>
+<hr>
+<section style="background-color: #A7E7DD">
+  <h1>Features</h1>
+  <table style="width:100%">
+  <tr>
+    <th>Internet<br><br>WiFi is available in all areas.<br>FREE</th>
+    <th>Cleaning services<br><br>Daily housekeeping.<br>FREE</th>
+    <th>Business facilities<br><br>Fax/photocopying.<br>CHARGES MAY APPLY</th>
+  </tr>
+  <tr>
+    <th>Reception services<br><br>ATM/cash machine on site.<br>FREE</th>
+    <th>Transportation<br><br>Airport shuttle services.<br>FREE</th>
+    <th>Pets<br><br>Pets are allowed..</th>
+</table>
+</section>
+<hr>
+<section style="background-color: #A7E7DD">
+  <h1>Gallery</h1>
+  <!-- Container for the image gallery -->
+<div class="container">
+
+  <!-- Full-width images with number text -->
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+      <img src="pictures/europe1.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+      <img src="pictures/europe2.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+      <img src="pictures/europe3.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+      <img src="pictures/europe4.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+      <img src="pictures/europe5.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+      <img src="pictures/europe6.jpg" style="width:100%">
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <!-- Image text -->
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <!-- Thumbnail images -->
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="pictures/europe1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Marjal Costa Blanca Camping & Resort">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="pictures/europe2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Marjal Costa Blanca Camping & Resort">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="pictures/europe3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Marjal Costa Blanca Camping & Resort">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="pictures/europe4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Marjal Costa Blanca Camping & Resort">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="pictures/europe5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Marjal Costa Blanca Camping & Resort">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="pictures/europe6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Marjal Costa Blanca Camping & Resort">
+    </div>
+  </div>
+</div>
+<script>
+  var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+</section>
+<hr>
+<section style="background-color: #A7E7DD">
+  <h1>Location</h1>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3136.251433593364!2d-0.8141330847551927!3d38.18083327968747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63bb0d6bb5ad73%3A0x1d322b73e150330b!2sMarjal%20Costa%20Blanca%20Camping%20%26%20Resort!5e0!3m2!1sen!2slk!4v1578468263837!5m2!1sen!2slk" width="1420" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+</section>
+<hr>
+<div class="footer">
+  <h2>Flight Aware</h2>
+  <a href="contactUs.html">Contact Us</a>
+  <a href="About.html">About Us</a>
+  <a href="index.html">Where To?</a>
+  <a href="Search.html" class="left">Flight Aware</a>
+</div>
+</body>
+</html>
